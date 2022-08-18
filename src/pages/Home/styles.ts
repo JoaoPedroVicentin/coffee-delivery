@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const HomeContainer = styled.main`
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,14 +10,11 @@ export const HomeContainer = styled.main`
 
 export const Intro = styled.section`
     position: relative;
-    height: calc(100vh - 10rem);
-
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
+    grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
     justify-content: center;
-
-    padding: 2rem 0;
+    padding: 3rem 0;
     gap: 1rem;
 `
 
@@ -33,7 +29,7 @@ export const Title = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding-right: 1rem;
+    padding-right: 2rem;
 
     h1{
         font-family: 'Baloo 2', cursive;
@@ -66,10 +62,6 @@ export const Image = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-
-    img{
-        width: 90%;
-    }
 `
 
 export const Icon = styled.span`
@@ -96,14 +88,37 @@ export const CoffeeIcon = styled(Icon)`
 `
 
 export const CoffeeList = styled.section`
+    font-family: 'Baloo 2';
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 3rem 0;
 
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 3rem;
+
+        h1{
+            font-size: 2rem;
+            line-height: 130%;
+        }
+    }
 `
 export const Filter = styled.div`
+    display: flex;
+    gap: 0.5rem;
 
+    a{
+        border: 1px solid ${props => props.theme['yellow']};
+        color: ${props => props.theme['yellowDark']};
+        text-decoration: none;
+        border-radius: 100px;
+        padding: 0.375rem 0.75rem;
+        font-size: 0.625rem;
+    }
 `
 export const List = styled.div`
-
-`
-export const CoffeeCard = styled.div`
 
 `

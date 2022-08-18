@@ -1,6 +1,7 @@
-import { Cart, Clock, CoffeeCard, CoffeeIcon, CoffeeList, Filter, HomeContainer, Icon, Image, Infos, Intro, Items, List, Pack, Title } from "./styles";
+import { Cart, Clock, CoffeeIcon, CoffeeList, Filter, HomeContainer, Icon, Image, Infos, Intro, Items, List, Pack, Title } from "./styles";
 import imageCoffee from "../../assets/imageCoffee.svg"
-import { Coffee, Package, ShoppingCart, ShoppingCartSimple, Timer } from "phosphor-react";
+import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
+import { CoffeeCardContainer } from "./components/CoffeeCard";
 
 export function Home(){
     return(
@@ -35,19 +36,7 @@ export function Home(){
                 </Filter>
                 </header>
                 <List>
-                    <CoffeeCard>
-                        <img />
-                        <span>TRADICIONAL</span>
-                        <h1>Expresso Tradicional</h1>
-                        <p>O tradicional café feito com água quente e grãos moídos</p>
-                        <div>
-                            <p>RS 9,90</p>
-                            <form>
-                                <input type="number" placeholder="00"/>
-                                <button><ShoppingCartSimple/></button>
-                            </form>
-                        </div>
-                    </CoffeeCard>
+                    <CoffeeCardContainer/>
                 </List>
             </CoffeeList>
         </HomeContainer>
