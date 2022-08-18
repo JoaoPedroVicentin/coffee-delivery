@@ -120,5 +120,8 @@ export const Filter = styled.div`
     }
 `
 export const List = styled.div`
-
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 1rem 0;
+    gap: 3rem 0.5rem;
 `

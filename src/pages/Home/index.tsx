@@ -37,6 +37,15 @@ export function Home(){
                 </header>
                 <List>
                     <CoffeeCardContainer/>
+                    <CoffeeCardContainer/>
+                    <CoffeeCardContainer/>
+                    <CoffeeCardContainer/>
+                    <CoffeeCardContainer/>
+                    <CoffeeCardContainer/>
+                    <CoffeeCardContainer/>
+                    <CoffeeCardContainer/>
+                    <CoffeeCardContainer/>
+                    <CoffeeCardContainer/>
                 </List>
             </CoffeeList>
         </HomeContainer>
