@@ -45,7 +45,6 @@ export const ValueDescription = styled.div`
 
 export const ButtonPurchase = styled.button`
     background: ${props => props.theme['yellow']};
-    color: ${props => props.theme['white']};
     width: 100%;
     padding: 0.75rem 0.5rem;
     border: none;
@@ -54,5 +53,10 @@ export const ButtonPurchase = styled.button`
 
     :hover{
         background: ${props => props.theme['yellowDark']};
+    }
+
+    a{
+        text-decoration: none;
+        color: ${props => props.theme['white']};
     }
 `

@@ -20,7 +20,7 @@ export function Purchase() {
                     <strong>R$ 33,20</strong>    
                 </ValueDescription>
             </ValuePurchase>
-            <ButtonPurchase>CONFIRMAR PEDIDO</ButtonPurchase>
+            <ButtonPurchase><a href="/success">CONFIRMAR PEDIDO</a></ButtonPurchase>
         </PurchaseContainer>
     )
 }
