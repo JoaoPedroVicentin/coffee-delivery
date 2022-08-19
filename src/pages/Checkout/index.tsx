@@ -1,17 +1,21 @@
 import { Address } from "./components/Address";
 import { Payment } from "./components/Payment";
 import { Purchase } from "./components/Purchase";
-import { CheckoutContainer } from "./styles";
+import { CheckoutContainer, FormColumn } from "./styles";
 
 
 export function Checkout() {
     return(
         <CheckoutContainer>
-            <div>
+            <FormColumn>
+                <h1>Complete seu pedido</h1>
                 <Address/>
                 <Payment/>
-            </div>
-            <Purchase/>
+            </FormColumn>
+            <FormColumn>
+                <h1>Cafés selecionados</h1>
+                <Purchase/>
+            </FormColumn>
         </CheckoutContainer>
     )
 }

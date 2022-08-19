@@ -10,9 +10,11 @@ export const AddressContainer = styled.div`
 
 export const FormContainer = styled.div`
    background: ${props => props.theme['baseCard']};
-   margin: 2rem 0;
    border-radius: 6px;
    padding: 2.5rem;
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
 `
 
 export const FormHeader = styled.div`
@@ -41,9 +43,12 @@ export const FormTitle = styled.div`
 
 export const FormBody = styled.form`
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "cep . ."
+                         "rua rua rua"
+                         "numero complemento complemento"
+                         "bairro cidade uf";
     gap: 1rem;
-    padding: 1.5rem 0;
 
     input{
         background: ${props => props.theme['baseInput']};
@@ -56,5 +61,26 @@ export const FormBody = styled.form`
         :focus{
             color: ${props => props.theme['baseText']};
         }
+    }
+    #CEP{
+        grid-area: cep;
+    }
+    #Rua{
+        grid-area: rua;
+    }
+    #Numero{
+        grid-area: numero;
+    }
+    #Complemento{
+        grid-area: complemento;
+    }
+    #Bairro{
+        grid-area: bairro;
+    }
+    #Cidade{
+        grid-area: cidade;
+    }
+    #UF{
+        grid-area: uf;
     }
 `

@@ -11,7 +11,7 @@ export function Header() {
                     <MapPin weight="fill" color='#8047f8' size={22}/>
                     <p>Assis, SP</p>
                 </Location>
-                <Cart>
+                <Cart href="/checkout">
                     <ShoppingCart weight="fill" size={22}/>
                 </Cart>
             </Action>

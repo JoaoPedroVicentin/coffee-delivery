@@ -4,8 +4,6 @@ import { AddressContainer, FormBody, FormContainer, FormHeader, FormTitle } from
 export function Address() {
     return(
         <AddressContainer>
-            <h1>Complete seu pedido</h1>
-
             <FormContainer>
                 <FormHeader>
                     <MapPinLine size={22}/>
@@ -16,13 +14,13 @@ export function Address() {
                 </FormHeader>
 
                 <FormBody>
-                    <input placeholder="CEP"/>
-                    <input placeholder="Rua"/>
-                    <input placeholder="Número"/>
-                    <input placeholder="Complemento"/>
-                    <input placeholder="Bairro"/>
-                    <input placeholder="Cidade"/>
-                    <input placeholder="UF"/>
+                    <input id="CEP" placeholder="CEP"/>
+                    <input id="Rua" placeholder="Rua"/>
+                    <input id="Numero" placeholder="Número"/>
+                    <input id="Complemento" placeholder="Complemento"/>
+                    <input id="Bairro" placeholder="Bairro"/>
+                    <input id="Cidade" placeholder="Cidade"/>
+                    <input id="UF" placeholder="UF"/>
                 </FormBody>
             </FormContainer>
         </AddressContainer>

@@ -19,7 +19,9 @@ export const PaymentHeader = styled.div`
 export const PaymentTitle = styled.div`
     font-family: 'Roboto';
     font-style: normal;
-    line-height: 130%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
     
     h1{
         font-size: 1rem;
