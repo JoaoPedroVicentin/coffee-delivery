@@ -50,6 +50,17 @@ export const FormBody = styled.form`
                          "bairro cidade uf";
     gap: 1rem;
 
+    @media (max-width: 875px) {
+        grid-template-columns: 1fr;
+        grid-template-areas: "cep"
+                             "rua"
+                             "numero"
+                             "complemento"
+                             "bairro"
+                             "cidade"
+                             "uf";
+    }
+
     input{
         background: ${props => props.theme['baseInput']};
         color: ${props => props.theme['baseLabel']};

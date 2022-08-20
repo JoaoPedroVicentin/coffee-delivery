@@ -8,6 +8,16 @@ export const SuccessContainer = styled.main`
     img{
         margin: auto auto 0 auto;
         bottom: 0;
+        width: 75%;
+    }
+
+    @media (max-width: 1028px) {
+        grid-template-columns: 1fr;
+        gap: 2rem
+    }
+
+    @media (max-width: 550px) {
+        padding: 2rem 1rem;
     }
 `
 
@@ -43,19 +53,13 @@ export const ConfirmHeader = styled.div`
 `
 
 export const ConfirmBody = styled.div`
-    border: 1px solid;
+    border: 1px solid red;
     border-image: linear-gradient(to left, #8047f8, #dbac2c );
     border-image-slice: 1;
     padding: 2.5rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-
-    ::before{
-        content: '';
-        border-radius: 6px 36px;
-    }
-    
 `
 
 export const ConfirmInfo = styled.div`

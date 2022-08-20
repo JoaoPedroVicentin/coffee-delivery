@@ -5,6 +5,7 @@ export const CoffeeCard = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
 
     width: 16rem;
     padding: 2rem 0;

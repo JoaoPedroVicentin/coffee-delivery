@@ -28,6 +28,10 @@ export const InfosProduct = styled.div`
     div{
         display: flex;
         gap: 0.5rem;
+
+        @media (max-width: 550px) {
+            flex-direction: column;
+        }
     }
 `
 

@@ -42,6 +42,11 @@ export const PaymentOptions = styled.div`
     justify-content: center;
     gap: 0.75rem;
 
+    @media (max-width: 820px) {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
     button{
         display: flex;
         flex: 1;

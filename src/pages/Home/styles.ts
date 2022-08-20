@@ -6,6 +6,10 @@ export const HomeContainer = styled.main`
     align-items: center;
     justify-content: center;
     padding: 0 6rem;
+
+    @media (max-width: 550px) {
+        padding: 0 2rem;
+    }
 `
 
 export const Intro = styled.section`
@@ -16,6 +20,11 @@ export const Intro = styled.section`
     justify-content: center;
     padding: 3rem 0;
     gap: 1rem;
+
+    @media (max-width: 1169px) {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
 `
 
 export const Infos = styled.div`
@@ -23,6 +32,10 @@ display: flex;
 flex-direction: column;
 justify-content: space-around;
 height: 100%;
+
+@media (max-width: 1169px) {
+        gap: 2rem;
+    }
 `
 
 export const Title = styled.div`
@@ -31,12 +44,20 @@ export const Title = styled.div`
     gap: 1rem;
     padding-right: 2rem;
 
+    @media (max-width: 1169px) {
+        padding-right: 0;
+    }
+
     h1{
         font-family: 'Baloo 2', cursive;
         font-weight: 800;
         font-size: 3rem;
         line-height: 130%;
         color: ${props => props.theme['baseTitle']};
+
+        @media (max-width: 460px) {
+            font-size: 2.5rem;
+        }
         
     }
     p{
@@ -50,6 +71,10 @@ export const Items = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+
+    @media (max-width: 555px) {
+        grid-template-columns: 1fr;
+    }
     
     p{
         display: flex;
@@ -62,6 +87,14 @@ export const Image = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    img{
+        width: 100%;
+
+        @media (max-width: 1169px) {
+            width:75%;
+        }
+    }
 `
 
 export const Icon = styled.span`
@@ -104,19 +137,41 @@ export const CoffeeList = styled.section`
             font-size: 2rem;
             line-height: 130%;
         }
+
+        @media (max-width: 995px) {
+            flex-direction: column;
+            gap: 0.75rem;
+        }
     }
 `
 export const Filter = styled.div`
     display: flex;
     gap: 0.5rem;
 
+    @media (max-width: 995px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    @media (max-width: 443px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
     a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border: 1px solid ${props => props.theme['yellow']};
         color: ${props => props.theme['yellowDark']};
         text-decoration: none;
         border-radius: 100px;
         padding: 0.375rem 0.75rem;
         font-size: 0.625rem;
+
+        @media (max-width: 607px) {
+            padding: 0.375rem 0.325rem;
+        }
     }
 `
 export const List = styled.div`
@@ -124,4 +179,17 @@ export const List = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 1rem 0;
     gap: 3rem 0.5rem;
+
+    @media (max-width: 1259px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (max-width: 995px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 727px) {
+        grid-template-columns: 1fr;
+    }
+
 `

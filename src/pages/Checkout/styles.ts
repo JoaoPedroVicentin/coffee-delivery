@@ -5,6 +5,14 @@ export const CheckoutContainer = styled.main`
     gap: 2rem;
     display: grid;
     grid-template-columns: 1.25fr 0.75fr;
+
+    @media (max-width: 1339px) {
+        grid-template-columns: 1fr;
+    }
+
+    @media (max-width: 550px) {
+        padding: 2rem 0.5rem;
+    }
 `
 
 export const FormColumn = styled.div`
