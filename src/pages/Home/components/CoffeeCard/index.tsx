@@ -1,30 +1,43 @@
-import { Minus, Plus, ShoppingCartSimple } from "phosphor-react"
+import { CaretLeft, Coffee, Minus, Plus, ShoppingCartSimple } from "phosphor-react"
+import { createContext, useContext, useState } from "react"
 import { ButtonCart, ButtonCount, Tags, CoffeeCard, Span, Description, Buy, Counter } from "./style"
+import { coffeeList } from "../.."
 
-export function CoffeeCardContainer() {
+interface CoffeeProps{
+    name: string,
+    description: string,
+    value: number,
+    category: string[]
+    img: string
+}
+
+export function CoffeeCardContainer({ name, description, value, category, img }: CoffeeProps) {
+
     return(
-        <CoffeeCard>
-            <img src="src\assets\coffees\Expresso.svg"/>
-            <Tags>
-                <Span>ESPECIAL</Span>
-                <Span>ALCOÓLICO</Span>
-                <Span>GELADO</Span>
-            </Tags>
-            <Description>
-                <h1>Expresso Tradicional</h1>
-                <p>O tradicional café feito com água quente e grãos moídos</p>
-            </Description>
-            <Buy>
-                <p>R$ <strong>9,90</strong></p>
-                <form>
-                    <Counter>
-                        <ButtonCount><Minus weight="bold"/></ButtonCount>
-                        <span>0</span>
-                        <ButtonCount><Plus weight="bold"/></ButtonCount>
-                    </Counter>
-                    <ButtonCart><ShoppingCartSimple weight="fill" size={22}/></ButtonCart>
-                </form>
-            </Buy>
-        </CoffeeCard>
-    )
+                <CoffeeCard>
+                    <img src='src\assets\coffees\Expresso.svg'/>
+                    <Tags>
+                        {category.map( tag => {
+                            return(
+                                <Span>{tag}</Span>
+                            )
+                        })}
+                    </Tags>
+                    <Description>
+                        <h1>{name}</h1>
+                        <p>{description}</p>
+                    </Description>
+                    <Buy>
+                        <p>R$ <strong>{value}</strong></p>
+                        <form>
+                            <Counter>
+                                <ButtonCount><Minus weight="bold"/></ButtonCount>
+                                <span>0</span>
+                                <ButtonCount><Plus weight="bold"/></ButtonCount>
+                            </Counter>
+                            <ButtonCart><ShoppingCartSimple weight="fill" size={22}/></ButtonCart>
+                        </form>
+                    </Buy>
+                </CoffeeCard>
+    )   
 }
