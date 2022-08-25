@@ -3,6 +3,7 @@ import imageCoffee from "../../assets/imageCoffee.svg"
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
 import { CoffeeCardContainer } from "./components/CoffeeCard";
 
+
 interface Coffee{
     id: number,
     name: string,
@@ -19,7 +20,7 @@ export const coffeeList: Coffee[] = [
         description: 'O tradicional café feito com água quente e grãos moídos',
         value: 9.90,
         category: ['TRADICIONAL'],
-        img: 'src\assets\coffees\Expresso.svg'
+        img: 'src/assets/coffees/Expresso.svg'
     },
     {
         id: 2,
@@ -27,7 +28,7 @@ export const coffeeList: Coffee[] = [
         description: 'Expresso diluído, menos intenso que o tradicional',
         value: 9.90,
         category: ['TRADICIONAL'],
-        img: 'src\assets\coffees\Americano.svg'
+        img: 'src/assets/coffees/Americano.svg'
     },
     {
         id: 3,
@@ -35,7 +36,7 @@ export const coffeeList: Coffee[] = [
         description: 'Café expresso tradicional com espuma cremosa',
         value: 9.90,
         category: ['TRADICIONAL'],
-        img: 'src\assets\coffees\ExpressoCremoso.svg'
+        img: 'src/assets/coffees/ExpressoCremoso.svg'
     },
     {
         id: 4,
@@ -43,7 +44,7 @@ export const coffeeList: Coffee[] = [
         description: 'Bebida preparada com café expresso e cubos de gelo',
         value: 9.90,
         category: ['TRADICIONAL', 'GELADO'],
-        img: 'src\assets\coffees\CaféGelado.svg'
+        img: 'src/assets/coffees/CaféGelado.svg'
     },
     {
         id: 5,
@@ -51,7 +52,7 @@ export const coffeeList: Coffee[] = [
         description: 'Meio a meio de expresso tradicional com leite vaporizado',
         value: 9.90,
         category: ['TRADICIONAL', 'COM LEITE'],
-        img: 'src\assets\coffees\CaféComLeite.svg'
+        img: 'src/assets/coffees/CaféComLeite.svg'
     },
     {
         id: 6,
@@ -59,7 +60,7 @@ export const coffeeList: Coffee[] = [
         description: 'Uma dose de café expresso com o dobro de leite e expuma cremosa',
         value: 9.90,
         category: ['TRADICIONAL', 'COM LEITE'],
-        img: 'src\assets\coffees\Latte.svg'
+        img: 'src/assets/coffees/Latte.svg'
     }
 ]
 

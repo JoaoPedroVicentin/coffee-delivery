@@ -15,7 +15,7 @@ export function CoffeeCardContainer({ name, description, value, category, img }:
 
     return(
                 <CoffeeCard>
-                    <img src='src\assets\coffees\Expresso.svg'/>
+                    <img src={img}/>
                     <Tags>
                         {category.map( tag => {
                             return(
@@ -28,7 +28,7 @@ export function CoffeeCardContainer({ name, description, value, category, img }:
                         <p>{description}</p>
                     </Description>
                     <Buy>
-                        <p>R$ <strong>{value}</strong></p>
+                        <p>R$ <strong>{value.toFixed(2)}</strong></p>
                         <form>
                             <Counter>
                                 <ButtonCount><Minus weight="bold"/></ButtonCount>
