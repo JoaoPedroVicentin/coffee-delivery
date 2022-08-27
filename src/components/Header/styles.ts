@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const HeaderContainer = styled.header`
     width: 100%;
@@ -34,7 +35,7 @@ export const Location = styled.div`
     color: ${props => props.theme['purpleDark']};
 `
 
-export const Cart = styled.a`
+export const Cart = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: center;

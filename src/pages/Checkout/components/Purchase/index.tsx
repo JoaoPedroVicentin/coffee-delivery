@@ -11,7 +11,7 @@ export function Purchase() {
         <PurchaseContainer>
             {listPurchase.map(purchase => {
                 return (
-                    <Product coffee={purchase.coffee} qtde={purchase.qtde} value={purchase.value}/>
+                    <Product id={purchase.id} coffee={purchase.coffee} qtde={purchase.qtde} value={purchase.value}/>
                 )
             })}
             <ValuePurchase>

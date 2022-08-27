@@ -4,13 +4,23 @@ import { Coffee, PurchaseContext } from "../../../../../contexts/PurchaseContext
 import { ProductContainer ,InfosProduct, ValuesProduct, CounterProduct, ButtonCountProduct, DeleteProduct } from "./styled";
 
 interface PurchaseProps {
+    id: string
     coffee: Coffee,
     qtde: number,
     value: number
 }
 
-export function Product({coffee, qtde, value}:PurchaseProps){
+export function Product({id, coffee, qtde, value}:PurchaseProps){
 
+    const {addQtdeCoffee, dropQtdeCoffee} = useContext(PurchaseContext)
+
+    function handleAddQtde(){
+        addQtdeCoffee(id)
+    }
+
+    function handleDropQtde(){
+        dropQtdeCoffee(id)
+    }
 
     return(
         <ProductContainer>
@@ -19,16 +29,16 @@ export function Product({coffee, qtde, value}:PurchaseProps){
                 <p>{coffee.name}</p>
                 <div>
                     <CounterProduct>
-                        <ButtonCountProduct><Minus size={14}/></ButtonCountProduct>
+                        <ButtonCountProduct onClick={handleAddQtde}><Minus size={14}/></ButtonCountProduct>
                             <span>{qtde}</span>
-                        <ButtonCountProduct><Plus size={14}/></ButtonCountProduct>
+                        <ButtonCountProduct onClick={handleDropQtde}><Plus size={14}/></ButtonCountProduct>
                     </CounterProduct>
                     <DeleteProduct>
                         <Trash color="#8047F8" size={14}/> REMOVER
                     </DeleteProduct>
                 </div>
             </InfosProduct>
-            <ValuesProduct>R$ {value}</ValuesProduct>
+            <ValuesProduct>R$ {value.toFixed(2)}</ValuesProduct>
         </ProductContainer>
     )
 }

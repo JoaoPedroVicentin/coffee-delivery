@@ -4,12 +4,11 @@ import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
 import { CoffeeCardContainer } from "./components/CoffeeCard";
 import { useContext } from "react";
 import { PurchaseContext } from "../../contexts/PurchaseContext";
-import { Product } from "../Checkout/components/Purchase/Products";
 
 
 export function Home(){
 
-    const {coffeeList, listPurchase} = useContext(PurchaseContext)
+    const {coffeeList} = useContext(PurchaseContext)
 
     return(
         <HomeContainer>
@@ -56,11 +55,6 @@ export function Home(){
                     })}
                 </List>
             </CoffeeList>
-            {listPurchase.map(purchase => {
-                return (
-                    <Product coffee={purchase.coffee} qtde={purchase.qtde} value={purchase.value}/>
-                )
-            })}
         </HomeContainer>
     )
 }

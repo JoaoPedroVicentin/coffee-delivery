@@ -32,8 +32,7 @@ export function CoffeeCardContainer({ id, name, description, value, category, im
         })
     }
 
-    function newPurchase(event:React.FormEvent<HTMLButtonElement>){
-        event.preventDefault
+    function newPurchase(){
         handleNewPurchase(id, qtde)
         setQtde(0)
     }
