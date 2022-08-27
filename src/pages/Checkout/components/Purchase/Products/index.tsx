@@ -1,6 +1,7 @@
 import { Minus, Plus, Trash } from "phosphor-react";
 import { ProductContainer ,InfosProduct, ValuesProduct, CounterProduct, ButtonCountProduct, DeleteProduct } from "./styled";
 
+
 export function Product(){
     return(
         <ProductContainer>
