@@ -1,8 +1,13 @@
 import { Action, Cart, HeaderContainer, Location } from "./styles";
 import logoCoffeeDelivery from "../../assets/logoCoffeeDelivery.svg";
 import { MapPin, ShoppingCart } from "phosphor-react";
+import { useContext } from "react";
+import { PurchaseContext } from "../../contexts/PurchaseContext";
 
 export function Header() {
+
+    const { listPurchase } = useContext(PurchaseContext)
+
     return(
         <HeaderContainer>
             <img src={logoCoffeeDelivery} alt=""/>
@@ -13,6 +18,7 @@ export function Header() {
                 </Location>
                 <Cart href="/checkout">
                     <ShoppingCart weight="fill" size={22}/>
+                    {listPurchase.length}
                 </Cart>
             </Action>
         </HeaderContainer>

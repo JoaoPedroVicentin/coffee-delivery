@@ -19,15 +19,23 @@ export function CoffeeCardContainer({ id, name, description, value, category, im
     const [qtde, setQtde] = useState(0)
 
     function addQtde(){
-
+        setQtde((state) => {
+            return state + 1
+        })
     }
 
     function dropQtde(){
-
+        setQtde((state) => {
+            if(qtde > 0){
+                return state - 1
+            } else { return state }
+        })
     }
 
-    function newPurchase(){
+    function newPurchase(event:React.FormEvent<HTMLButtonElement>){
+        event.preventDefault
         handleNewPurchase(id, qtde)
+        setQtde(0)
     }
 
     return (
@@ -48,9 +56,9 @@ export function CoffeeCardContainer({ id, name, description, value, category, im
                 <p>R$ <strong>{value.toFixed(2)}</strong></p>
                 <div>
                     <Counter>
-                        <ButtonCount onClick={addQtde}><Minus weight="bold" /></ButtonCount>
+                        <ButtonCount onClick={dropQtde}><Minus weight="bold" /></ButtonCount>
                         <span>{qtde}</span>
-                        <ButtonCount onClick={dropQtde}><Plus weight="bold" /></ButtonCount>
+                        <ButtonCount onClick={addQtde}><Plus weight="bold" /></ButtonCount>
                     </Counter>
                     <ButtonCart onClick={newPurchase}><ShoppingCartSimple weight="fill" size={22} /></ButtonCart>
                 </div>

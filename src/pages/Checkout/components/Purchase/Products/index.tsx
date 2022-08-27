@@ -1,17 +1,26 @@
 import { Minus, Plus, Trash } from "phosphor-react";
+import { useContext } from "react";
+import { Coffee, PurchaseContext } from "../../../../../contexts/PurchaseContext";
 import { ProductContainer ,InfosProduct, ValuesProduct, CounterProduct, ButtonCountProduct, DeleteProduct } from "./styled";
 
+interface PurchaseProps {
+    coffee: Coffee,
+    qtde: number,
+    value: number
+}
 
-export function Product(){
+export function Product({coffee, qtde, value}:PurchaseProps){
+
+
     return(
         <ProductContainer>
-            <img src="src\assets\coffees\Expresso.svg"/>
+            <img src={coffee.img}/>
             <InfosProduct>
-                <p>Expresso Tradicional</p>
+                <p>{coffee.name}</p>
                 <div>
                     <CounterProduct>
                         <ButtonCountProduct><Minus size={14}/></ButtonCountProduct>
-                            <span>0</span>
+                            <span>{qtde}</span>
                         <ButtonCountProduct><Plus size={14}/></ButtonCountProduct>
                     </CounterProduct>
                     <DeleteProduct>
@@ -19,7 +28,7 @@ export function Product(){
                     </DeleteProduct>
                 </div>
             </InfosProduct>
-            <ValuesProduct>R$ 9,90</ValuesProduct>
+            <ValuesProduct>R$ {value}</ValuesProduct>
         </ProductContainer>
     )
 }

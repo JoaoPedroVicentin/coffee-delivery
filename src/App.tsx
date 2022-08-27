@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
-import { PurchaseContext, PurchaseContextProvider } from './contexts/PurchaseContext'
+import { PurchaseContextProvider } from './contexts/PurchaseContext'
 import { Router } from './Router'
 import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/theme/default'

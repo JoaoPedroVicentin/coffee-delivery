@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from "react"
+import React, { createContext, FormEvent, ReactNode, useState } from "react"
 import {v4 as uuidv4} from 'uuid';
 
 export interface Coffee{
@@ -13,11 +13,13 @@ export interface Coffee{
  interface Purchase {
     coffee: Coffee,
     qtde: number
+    value: number
 }
 
 interface PurchaseContextType{
     coffeeList: Coffee[],
     handleNewPurchase: (id: string, qtde: number) => void
+    listPurchase: Purchase[],
 }
 
 interface PurchaseContextProvidersProp{
@@ -32,11 +34,10 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
     function handleNewPurchase(id: string, qtde:number){
         {coffeeList.map(coffee => {
             if(coffee.id === id){
-                setListPurchase([...listPurchase, {coffee: coffee, qtde: qtde}])
+                setListPurchase((state) => [...state, {coffee: coffee, qtde: qtde, value: coffee.value * qtde}])
             }
         })}
     }
-    console.log(listPurchase)
 
     const coffeeList = [
         {
@@ -154,7 +155,7 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
     ]
 
     return(
-        <PurchaseContext.Provider value={{ coffeeList, handleNewPurchase }}>
+        <PurchaseContext.Provider value={{ coffeeList, handleNewPurchase, listPurchase }}>
             {children}
         </PurchaseContext.Provider>
     )

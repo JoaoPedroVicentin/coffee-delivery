@@ -1,11 +1,19 @@
+import { useContext } from "react";
+import { PurchaseContext } from "../../../../contexts/PurchaseContext";
 import { Product } from "./Products";
 import { ButtonPurchase, PurchaseContainer, ValueDescription, ValuePurchase} from "./styled";
 
 export function Purchase() {
+
+    const {listPurchase} = useContext(PurchaseContext)
+
     return(
         <PurchaseContainer>
-            <Product/>
-            <Product/>
+            {listPurchase.map(purchase => {
+                return (
+                    <Product coffee={purchase.coffee} qtde={purchase.qtde} value={purchase.value}/>
+                )
+            })}
             <ValuePurchase>
                 <ValueDescription>
                     <p>Total de itens</p>
