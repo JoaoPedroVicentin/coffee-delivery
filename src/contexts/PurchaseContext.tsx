@@ -1,4 +1,4 @@
-import React, { createContext, FormEvent, ReactNode, useState } from "react"
+import { createContext, FormEvent, ReactNode, useState } from "react"
 import {v4 as uuidv4} from 'uuid';
 
 export interface Coffee{
