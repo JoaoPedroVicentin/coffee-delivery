@@ -1,11 +1,11 @@
 import { Minus, Plus, Trash } from "phosphor-react";
 import { useContext } from "react";
-import { Coffee, PurchaseContext } from "../../../../../contexts/PurchaseContext";
+import { CoffeeCard, PurchaseContext } from "../../../../../contexts/PurchaseContext";
 import { ProductContainer ,InfosProduct, ValuesProduct, CounterProduct, ButtonCountProduct, DeleteProduct } from "./styled";
 
 interface PurchaseProps {
     id: string
-    coffee: Coffee,
+    coffee: CoffeeCard,
     qtde: number,
     value: number
 }

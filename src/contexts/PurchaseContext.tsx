@@ -1,7 +1,7 @@
 import { createContext, FormEvent, ReactNode, useEffect, useMemo, useState } from "react"
 import {v4 as uuidv4} from 'uuid';
 
-export interface Coffee{
+export interface CoffeeCard{
     id: string,
     name: string,
     description: string,
@@ -12,13 +12,13 @@ export interface Coffee{
 
  interface Purchase {
     id:string
-    coffee: Coffee,
+    coffee: CoffeeCard,
     qtde: number
     value: number
 }
 
 interface PurchaseContextType{
-    coffeeList: Coffee[],
+    coffeeList: CoffeeCard[],
     handleNewPurchase: (id: string, qtde: number) => void
     listPurchase: Purchase[],
     addQtdeCoffee: (id:string) => void,
