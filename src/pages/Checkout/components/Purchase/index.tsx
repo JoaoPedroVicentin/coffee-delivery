@@ -5,19 +5,23 @@ import { ButtonPurchase, PurchaseContainer, ValueDescription, ValuePurchase} fro
 
 export function Purchase() {
 
-    const {listPurchase} = useContext(PurchaseContext)
+    const {listPurchase, subTotal, totalOrder} = useContext(PurchaseContext)
 
     return(
         <PurchaseContainer>
             {listPurchase.map(purchase => {
                 return (
-                    <Product id={purchase.id} coffee={purchase.coffee} qtde={purchase.qtde} value={purchase.value}/>
-                )
+                    <Product key={purchase.id} 
+                    id={purchase.id} 
+                    coffee={purchase.coffee} 
+                    qtde={purchase.qtde} 
+                    value={purchase.value}/>
+                ) 
             })}
             <ValuePurchase>
                 <ValueDescription>
                     <p>Total de itens</p>
-                    <p>R$ 29,70</p>    
+                    <p>R$ {subTotal.toFixed(2)}</p>    
                 </ValueDescription>
                 <ValueDescription>
                     <p>Entrega</p>
@@ -25,7 +29,7 @@ export function Purchase() {
                 </ValueDescription>
                 <ValueDescription>
                     <strong>Total</strong>
-                    <strong>R$ 33,20</strong>    
+                    <strong>R$ {totalOrder.toFixed(2)}</strong>    
                 </ValueDescription>
             </ValuePurchase>
             <ButtonPurchase><a href="/success">CONFIRMAR PEDIDO</a></ButtonPurchase>

@@ -12,7 +12,7 @@ interface PurchaseProps {
 
 export function Product({id, coffee, qtde, value}:PurchaseProps){
 
-    const {addQtdeCoffee, dropQtdeCoffee} = useContext(PurchaseContext)
+    const {addQtdeCoffee, dropQtdeCoffee, deletePurchase} = useContext(PurchaseContext)
 
     function handleAddQtde(){
         addQtdeCoffee(id)
@@ -22,6 +22,10 @@ export function Product({id, coffee, qtde, value}:PurchaseProps){
         dropQtdeCoffee(id)
     }
 
+    function handleDelete(){
+        deletePurchase(id)
+    }
+
     return(
         <ProductContainer>
             <img src={coffee.img}/>
@@ -29,11 +33,11 @@ export function Product({id, coffee, qtde, value}:PurchaseProps){
                 <p>{coffee.name}</p>
                 <div>
                     <CounterProduct>
-                        <ButtonCountProduct onClick={handleAddQtde}><Minus size={14}/></ButtonCountProduct>
+                        <ButtonCountProduct onClick={handleDropQtde}><Minus size={14}/></ButtonCountProduct>
                             <span>{qtde}</span>
-                        <ButtonCountProduct onClick={handleDropQtde}><Plus size={14}/></ButtonCountProduct>
+                        <ButtonCountProduct onClick={handleAddQtde}><Plus size={14}/></ButtonCountProduct>
                     </CounterProduct>
-                    <DeleteProduct>
+                    <DeleteProduct onClick={handleDelete}>
                         <Trash color="#8047F8" size={14}/> REMOVER
                     </DeleteProduct>
                 </div>

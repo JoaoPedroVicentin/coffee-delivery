@@ -1,4 +1,4 @@
-import { createContext, FormEvent, ReactNode, useEffect, useState } from "react"
+import { createContext, FormEvent, ReactNode, useEffect, useMemo, useState } from "react"
 import {v4 as uuidv4} from 'uuid';
 
 export interface Coffee{
@@ -22,7 +22,10 @@ interface PurchaseContextType{
     handleNewPurchase: (id: string, qtde: number) => void
     listPurchase: Purchase[],
     addQtdeCoffee: (id:string) => void,
-    dropQtdeCoffee: (id:string) => void
+    dropQtdeCoffee: (id:string) => void,
+    subTotal: number,
+    totalOrder: number,
+    deletePurchase: (id:string) => void
 }
 
 interface PurchaseContextProvidersProp{
@@ -33,11 +36,19 @@ export const PurchaseContext = createContext({} as PurchaseContextType)
 
 export function PurchaseContextProvider({children}: PurchaseContextProvidersProp){
     const [listPurchase, setListPurchase] = useState<Purchase[]>([])
+    
 
     function handleNewPurchase(id: string, qtde:number){
         {coffeeList.map(coffee => {
             if(coffee.id === id){
-                setListPurchase((state) => [...state, {id:uuidv4() ,coffee: coffee, qtde: qtde, value: coffee.value * qtde}])
+                setListPurchase((state) => [...state, 
+                    {
+                        id:uuidv4(),
+                        coffee: coffee,
+                        qtde: qtde,
+                        value: coffee.value * qtde
+                    }
+                ])
             }
         })}
     }
@@ -66,6 +77,24 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
         }) 
         setListPurchase(updateQtde)
     }
+
+    function deletePurchase(id: string){
+        const listWithoutPurchase = listPurchase.filter(purchase => {
+            return purchase.id != id
+        }) 
+        setListPurchase(listWithoutPurchase)
+    }
+
+    const subTotal = useMemo(() => {
+        const value = listPurchase.reduce((acc, curr) => {
+          const temp = acc + curr.value
+          return temp
+        }, 0)
+    
+        return value
+      }, [listPurchase])
+    
+      const totalOrder = subTotal + 3.50
 
     const coffeeList = [
         {
@@ -183,7 +212,7 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
     ]
 
     return(
-        <PurchaseContext.Provider value={{ coffeeList, handleNewPurchase, listPurchase, addQtdeCoffee, dropQtdeCoffee }}>
+        <PurchaseContext.Provider value={{ coffeeList, handleNewPurchase, listPurchase, addQtdeCoffee, dropQtdeCoffee, subTotal, totalOrder, deletePurchase }}>
             {children}
         </PurchaseContext.Provider>
     )
