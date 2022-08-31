@@ -158,12 +158,10 @@ export const Filter = styled.div`
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    button{
+    a{
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: transparent;
-        cursor: pointer;
         border: 1px solid ${props => props.theme['yellow']};
         color: ${props => props.theme['yellowDark']};
         text-decoration: none;
