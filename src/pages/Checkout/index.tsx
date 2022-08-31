@@ -9,7 +9,7 @@ import { useForm, FormProvider } from "react-hook-form";
 const confirmOrderValidationSchema = zod.object({
     cep: zod.string().min(1, "Informe o CEP"),
     rua: zod.string().min(1, "Informe a Rua"),
-    numero: zod.string().min(1, "Informe o Numero"),
+    numero: zod.string().min(1, "Informe o Numerro"),
     complemento: zod.string(),
     bairro: zod.string().min(1, "Informe o Bairro"),
     cidade: zod.string().min(1, "Informe a Cidade"),
