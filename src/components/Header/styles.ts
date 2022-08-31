@@ -8,12 +8,6 @@ export const HeaderContainer = styled.header`
     justify-content: space-between;
     align-items: center;
 
-    img{
-        &:focus-within{
-            border-color: red;
-        }
-    }
-
     @media (max-width: 550px) {
         padding: 2rem 1rem;
     }
