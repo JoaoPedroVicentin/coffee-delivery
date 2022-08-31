@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { ButtonHTMLAttributes, useContext } from "react";
 import { PurchaseContext } from "../../../../contexts/PurchaseContext";
 import { Product } from "./Products";
 import { ButtonPurchase, PurchaseContainer, ValueDescription, ValuePurchase} from "./styled";
@@ -18,7 +18,11 @@ export function Purchase() {
                     value={purchase.value}/>
                 ) 
             })}
-            <ValuePurchase>
+            {listPurchase.length === 0 && (
+                <h2>O seu carrinho está vazio</h2>
+            )}
+            {listPurchase.length > 0 && (
+                <ValuePurchase>
                 <ValueDescription>
                     <p>Total de itens</p>
                     <p>R$ {subTotal.toFixed(2)}</p>    
@@ -32,7 +36,8 @@ export function Purchase() {
                     <strong>R$ {totalOrder.toFixed(2)}</strong>    
                 </ValueDescription>
             </ValuePurchase>
-            <ButtonPurchase><a href="/success">CONFIRMAR PEDIDO</a></ButtonPurchase>
+            )}
+            <ButtonPurchase type="submit">CONFIRMAR PEDIDO</ButtonPurchase>
         </PurchaseContainer>
     )
 }
