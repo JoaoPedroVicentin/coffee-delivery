@@ -53,23 +53,14 @@ export const ConfirmHeader = styled.div`
 `
 
 export const ConfirmBody = styled.div`
-  padding: 2.5rem;
-  border-radius: 6px 36px 6px 36px;
-  position: relative;
-  background: ${props => props.theme['background']};
-  min-width: 32rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  &::before {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    z-index: -1;
-    border-radius: 7px 37px 7px 37px;
-    background: linear-gradient(102.89deg, #dbac2c 2.61%, #8047f8 98.76%);
-  }
-`;
+    border: 1px solid red;
+    border-image: linear-gradient(to left, #8047f8, #dbac2c );
+    border-image-slice: 1;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+`
 
 export const ConfirmInfo = styled.div`
     display: flex;
