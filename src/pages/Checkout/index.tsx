@@ -5,6 +5,7 @@ import { CheckoutContainer, FormColumn } from "./styles";
 
 
 export function Checkout() {
+
     return(
         <CheckoutContainer>
             <FormColumn>

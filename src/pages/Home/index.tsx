@@ -1,8 +1,8 @@
-import { Cart, Clock, CoffeeIcon, CoffeeList, Filter, HomeContainer, Icon, Image, Infos, Intro, Items, List, Pack, Title } from "./styles";
+import { Cart, Clock, CoffeeIcon, CoffeeList, HomeContainer, Image, Infos, Intro, Items, List, Pack, Title } from "./styles";
 import imageCoffee from "../../assets/imageCoffee.svg"
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
 import { CoffeeCardContainer } from "./components/CoffeeCard";
-import { useContext } from "react";
+import { useContext} from "react";
 import { PurchaseContext } from "../../contexts/PurchaseContext";
 
 
@@ -33,24 +33,17 @@ export function Home(){
             <CoffeeList>
                 <header>
                 <h1>Nossos Cafés</h1>
-                <Filter>
-                    <a href="#">TRADICIONAL</a>
-                    <a href="#">ESPECIAL</a>
-                    <a href="#">COM LEITE</a>
-                    <a href="#">ALCOÓLICO</a>
-                    <a href="#">GELADO</a>
-                </Filter>
                 </header>
                 <List>
                     {coffeeList.map(coffee => {
                         return (
-                            <CoffeeCardContainer key={coffee.id} 
-                            id={coffee.id}
-                            name={coffee.name} 
-                            description={coffee.description} 
-                            category={coffee.category}
-                            value={coffee.value}
-                            img={coffee.img}/>
+                            <CoffeeCardContainer key={coffee.id}
+                                id={coffee.id}
+                                name={coffee.name}
+                                description={coffee.description}
+                                category={coffee.category}
+                                value={coffee.value}
+                                img={coffee.img} />
                         )
                     })}
                 </List>

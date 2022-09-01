@@ -144,36 +144,7 @@ export const CoffeeList = styled.section`
         }
     }
 `
-export const Filter = styled.div`
-    display: flex;
-    gap: 0.5rem;
 
-    @media (max-width: 995px) {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
-
-    @media (max-width: 443px) {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    a{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid ${props => props.theme['yellow']};
-        color: ${props => props.theme['yellowDark']};
-        text-decoration: none;
-        border-radius: 100px;
-        padding: 0.375rem 0.75rem;
-        font-size: 0.625rem;
-
-        @media (max-width: 607px) {
-            padding: 0.375rem 0.325rem;
-        }
-    }
-`
 export const List = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

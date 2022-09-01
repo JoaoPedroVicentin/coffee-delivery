@@ -38,7 +38,7 @@ export function Purchase() {
                     </ValueDescription>
                 </ValuePurchase>
             )}
-            <ButtonPurchase><a href="/success">CONFIRMAR PEDIDO</a></ButtonPurchase>
+            <ButtonPurchase type="submit">CONFIRMAR PEDIDO</ButtonPurchase>
 
         </PurchaseContainer>
     )

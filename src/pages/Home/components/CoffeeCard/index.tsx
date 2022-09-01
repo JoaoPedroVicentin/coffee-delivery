@@ -16,7 +16,7 @@ export function CoffeeCardContainer({ id, name, description, value, category, im
 
     const {handleNewPurchase} = useContext(PurchaseContext)
 
-    const [qtde, setQtde] = useState(0)
+    const [qtde, setQtde] = useState(1)
 
     function addQtde(){
         setQtde((state) => {
@@ -26,7 +26,7 @@ export function CoffeeCardContainer({ id, name, description, value, category, im
 
     function dropQtde(){
         setQtde((state) => {
-            if(qtde > 0){
+            if(qtde > 1){
                 return state - 1
             } else { return state }
         })
