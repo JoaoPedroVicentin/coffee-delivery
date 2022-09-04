@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import { PurchaseContext } from "../../../../contexts/PurchaseContext";
 import { Product } from "./Products";
 import { ButtonPurchase, PurchaseContainer, ValueDescription, ValuePurchase } from "./styled";
@@ -6,7 +7,7 @@ import { ButtonPurchase, PurchaseContainer, ValueDescription, ValuePurchase } fr
 export function Purchase() {
 
     const { listPurchase, subTotal, totalOrder } = useContext(PurchaseContext)
-//gjhg
+
     return (
         <PurchaseContainer>
             {listPurchase.map(purchase => {
@@ -39,6 +40,7 @@ export function Purchase() {
                 </ValuePurchase>
             )}
             <ButtonPurchase type="submit">CONFIRMAR PEDIDO</ButtonPurchase>
+            
 
         </PurchaseContainer>
     )

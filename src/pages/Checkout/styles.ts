@@ -2,12 +2,16 @@ import styled from "styled-components";
 
 export const CheckoutContainer = styled.main`
     padding: 2rem 6rem;
-    gap: 2rem;
-    display: grid;
-    grid-template-columns: 1.25fr 0.75fr;
+    
 
-    @media (max-width: 1339px) {
-        grid-template-columns: 1fr;
+    form{
+        gap: 2rem;
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+
+        @media (max-width: 1339px) {
+            grid-template-columns: 1fr;
+        }
     }
 
     @media (max-width: 550px) {

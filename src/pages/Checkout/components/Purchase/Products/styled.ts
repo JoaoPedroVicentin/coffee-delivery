@@ -47,7 +47,7 @@ export const ValuesProduct = styled.div`
     color: ${props => props.theme['baseText']};
 `
 
-export const CounterProduct = styled.button`
+export const CounterProduct = styled.div`
         border-radius: 6px;
         display: flex;
         align-items: center;

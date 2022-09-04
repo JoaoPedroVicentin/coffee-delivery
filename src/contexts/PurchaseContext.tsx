@@ -1,4 +1,5 @@
-import { createContext, FormEvent, ReactNode, useEffect, useMemo, useState } from "react"
+import { createContext, ReactNode, useMemo, useState } from "react"
+import { useNavigate } from "react-router-dom";
 import {v4 as uuidv4} from 'uuid';
 
 export interface Coffee{
@@ -10,7 +11,17 @@ export interface Coffee{
     img: string
 }
 
- interface Purchase {
+ interface FormPurchaseData {
+    cep: string,
+    rua: string,
+    numero: string,
+    complemento?: string,
+    bairro: string,
+    cidade: string,
+    uf: string
+}
+
+interface Purchase {
     id:string
     coffee: Coffee,
     qtde: number
@@ -26,6 +37,8 @@ interface PurchaseContextType{
     subTotal: number,
     totalOrder: number,
     deletePurchase: (id:string) => void
+    createPurchaseData: (data: FormPurchaseData) => void,
+    purchaseData: FormPurchaseData
 }
 
 interface PurchaseContextProvidersProp{
@@ -36,7 +49,25 @@ export const PurchaseContext = createContext({} as PurchaseContextType)
 
 export function PurchaseContextProvider({children}: PurchaseContextProvidersProp){
     const [listPurchase, setListPurchase] = useState<Purchase[]>([])
+    const [purchaseData, setPurchaseData] = useState<FormPurchaseData>({cep: '', rua: '', bairro: '', cidade: '', numero: '', uf: ''})
     
+    const navigate = useNavigate()
+
+    function createPurchaseData(data: FormPurchaseData){
+        const newPurchaseData: FormPurchaseData = {
+            cep: data.cep,
+            rua: data.rua,
+            bairro: data.bairro,
+            cidade: data.cidade,
+            numero: data.numero,
+            uf: data.uf,
+            complemento: data.complemento
+        }
+        setPurchaseData(newPurchaseData)
+        navigate("/success", {
+            state: data,
+        })
+    }
 
     function handleNewPurchase(id: string, qtde:number){
         {coffeeList.map(coffee => {
@@ -212,7 +243,8 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
     ]
 
     return(
-        <PurchaseContext.Provider value={{ coffeeList, handleNewPurchase, listPurchase, addQtdeCoffee, dropQtdeCoffee, subTotal, totalOrder, deletePurchase }}>
+        <PurchaseContext.Provider value={{ coffeeList, handleNewPurchase, listPurchase, addQtdeCoffee,
+        dropQtdeCoffee, subTotal, totalOrder, deletePurchase, createPurchaseData, purchaseData }}>
             {children}
         </PurchaseContext.Provider>
     )

@@ -1,8 +1,13 @@
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
+import { useContext } from 'react'
 import imageSuccess from '../../assets/imageSuccess.svg'
+import { PurchaseContext } from '../../contexts/PurchaseContext'
 import { MapIcon, TimerIcon, DollarIcon, ConfirmPurchase, SuccessContainer, ConfirmHeader, ConfirmBody, ConfirmInfo } from './styles'
 
 export function Success() {
+
+    const {purchaseData} = useContext(PurchaseContext)
+
     return(
         <SuccessContainer>
             <ConfirmPurchase>
@@ -16,8 +21,8 @@ export function Success() {
                             <MapPin weight='fill'/>
                         </MapIcon>
                         <span>
-                            <p>Entrega em <strong>Rua João Daniel Martinelli, 102</strong></p>
-                            <p>Farrapos - Porto Alegre, RS</p>
+                            <p>Entrega em <strong>{purchaseData.rua}, {purchaseData.numero}</strong></p>
+                            <p>{purchaseData.bairro} - {purchaseData.cidade}, {purchaseData.uf}</p>
                         </span>
                     </ConfirmInfo>
                     <ConfirmInfo>

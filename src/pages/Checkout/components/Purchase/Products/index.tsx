@@ -33,9 +33,9 @@ export function Product({id, coffee, qtde, value}:PurchaseProps){
                 <p>{coffee.name}</p>
                 <div>
                     <CounterProduct>
-                        <ButtonCountProduct onClick={handleDropQtde}><Minus size={14}/></ButtonCountProduct>
+                        <ButtonCountProduct type="button" onClick={handleDropQtde}><Minus size={14}/></ButtonCountProduct>
                             <span>{qtde}</span>
-                        <ButtonCountProduct onClick={handleAddQtde}><Plus size={14}/></ButtonCountProduct>
+                        <ButtonCountProduct type="button" onClick={handleAddQtde}><Plus size={14}/></ButtonCountProduct>
                     </CounterProduct>
                     <DeleteProduct onClick={handleDelete}>
                         <Trash color="#8047F8" size={14}/> REMOVER

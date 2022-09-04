@@ -41,9 +41,9 @@ export const FormTitle = styled.div`
     }
 `
 
-export const FormBody = styled.form`
+export const FormBody = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr  1fr 1fr;
     grid-template-areas: "cep . ."
                          "rua rua rua"
                          "numero complemento complemento"
@@ -62,6 +62,8 @@ export const FormBody = styled.form`
     }
 
     input{
+        width: 100%;
+        height: 2.625rem;
         background: ${props => props.theme['baseInput']};
         color: ${props => props.theme['baseLabel']};
         padding: 0.75rem;
@@ -73,6 +75,14 @@ export const FormBody = styled.form`
             color: ${props => props.theme['baseText']};
         }
     }
+
+    span{
+        color: red;
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 0.8rem;
+    }
+
     #CEP{
         grid-area: cep;
     }
