@@ -43,8 +43,6 @@ export function Checkout() {
         createPurchaseData(data)
     }
 
-    console.log(purchaseData)
-
     return (
         <CheckoutContainer>
             <form onSubmit={handleSubmit(handleNewPurchase)}>
