@@ -19,10 +19,12 @@ export function Header() {
                     <MapPin weight="fill" color='#8047f8' size={22}/>
                     <p>Assis, SP</p>
                 </Location>
-                <Cart to="/checkout">
+                <NavLink to="/checkout">
+                <Cart>
+                    {listPurchase.length >= 1 && <span>{listPurchase.length}</span>}
                     <ShoppingCart weight="fill" size={22}/>
-                    {listPurchase.length}
                 </Cart>
+                </NavLink>
             </Action>
         </HeaderContainer>
     )

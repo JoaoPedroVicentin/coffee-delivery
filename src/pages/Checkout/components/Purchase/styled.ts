@@ -59,4 +59,9 @@ export const ButtonPurchase = styled.button`
         text-decoration: none;
         color: ${props => props.theme['white']};
     }
+
+    &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
 `

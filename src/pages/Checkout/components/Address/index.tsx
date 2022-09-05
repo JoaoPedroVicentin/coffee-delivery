@@ -41,7 +41,7 @@ export function Address() {
                         <span>{errors.numero?.message}</span>
                     </div>
                     <div id="Complemento">
-                        <input placeholder="Complemento" {...register('complemento')} />
+                        <input placeholder="Complemento (opcional)" {...register('complemento')} />
                         <span>{errors.complemento?.message}</span>
                     </div>
                     <div id="Bairro">

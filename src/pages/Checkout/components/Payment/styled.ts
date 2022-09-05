@@ -8,6 +8,13 @@ export const PaymentContainer = styled.div`
     border-radius: 6px;
     gap: 2rem;
     color: ${props => props.theme['purple']};
+    
+    span{
+        color: red;
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 1rem;
+    }
 `
 
 export const PaymentHeader = styled.div`
@@ -46,31 +53,43 @@ export const PaymentOptions = styled.div`
         display: grid;
         grid-template-columns: 1fr;
     }
+`
 
-    button{
-        display: flex;
-        flex: 1;
-        justify-content: center;
-        align-items: center;
-        gap: 0.75rem;
-        background: ${props => props.theme['baseButton']};
-        color: ${props => props.theme['baseText']};
-        font-size: 0.75rem;
-        font-weight: 400;
-        line-height: 160%;
-        padding: 1rem;
-        border-radius: 6px;
-        text-decoration: none;
-        border: none;
+export const MethodPayment = styled.div`
 
-        :hover{
-            background: ${props => props.theme['baseHover']};
-            cursor: pointer;
+        width: 100%;
+
+        input{
+            visibility: none;
+            appearance: none;
         }
 
-        :focus{
+        input:checked{
+            box-shadow: none
+        }
+
+        div{
+            padding: 0 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+            background: ${props => props.theme['baseButton']};
+            color: ${props => props.theme['baseText']};
+            font-family: 'Roboto';
+            font-size: 0.75rem;
+            font-weight: 400;
+            height: 3rem;
+            border-radius: 6px;
+
+            :hover{
+                background: ${props => props.theme['baseHover']};
+                cursor: pointer;
+            }
+        }
+
+        input:checked + label div{
             background: ${props => props.theme['purpleLight']};
             box-shadow: 0 0 0 2px ${(props) => props.theme['purple']};
         }
-    }
 `

@@ -40,7 +40,7 @@ export function Success() {
                         </DollarIcon>
                         <span>
                             <p>Pagamento na entrega</p>
-                            <strong>Cartão de Crédito</strong>
+                            <strong>{purchaseData.payment}</strong>
                         </span>
                     </ConfirmInfo>
                 </ConfirmBody>

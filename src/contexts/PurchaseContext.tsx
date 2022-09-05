@@ -20,6 +20,7 @@ export interface Coffee{
     bairro: string,
     cidade: string,
     uf: string
+    payment: string
 }
 
 interface Purchase {
@@ -50,7 +51,7 @@ export const PurchaseContext = createContext({} as PurchaseContextType)
 
 export function PurchaseContextProvider({children}: PurchaseContextProvidersProp){
     const [listPurchase, setListPurchase] = useState<Purchase[]>([])
-    const [purchaseData, setPurchaseData] = useState<FormPurchaseData>({cep: '', rua: '', bairro: '', cidade: '', numero: '', uf: ''})
+    const [purchaseData, setPurchaseData] = useState<FormPurchaseData>({cep: '', rua: '', bairro: '', cidade: '', numero: '', uf: '', payment: ''})
     
     const navigate = useNavigate()
 
@@ -62,7 +63,8 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
             cidade: data.cidade,
             numero: data.numero,
             uf: data.uf,
-            complemento: data.complemento
+            complemento: data.complemento,
+            payment: data.payment
         }
         setPurchaseData(newPurchaseData)
         navigate("/success", {

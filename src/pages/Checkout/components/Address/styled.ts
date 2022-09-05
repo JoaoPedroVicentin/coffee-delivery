@@ -73,6 +73,7 @@ export const FormBody = styled.div`
 
         :focus{
             color: ${props => props.theme['baseText']};
+            box-shadow: 0 0 0 2px ${(props) => props.theme['yellowDark']};
         }
     }
 

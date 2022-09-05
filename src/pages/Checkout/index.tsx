@@ -8,6 +8,12 @@ import * as zod from 'zod';
 import { useContext } from "react";
 import { PurchaseContext } from "../../contexts/PurchaseContext";
 
+enum PaymentMethods {
+    credit = "Cartão de Crédito",
+    money = "Dinheiro",
+    debit = "Cartão de Débito"
+}
+
 const formValiadation = zod.object({
     cep: zod.string().nonempty("Digite seu cep").min(8, "Mínimo de 8 carácteres"),
     rua: zod.string().nonempty("Digite sua rua"),
@@ -15,14 +21,19 @@ const formValiadation = zod.object({
     bairro: zod.string().nonempty("Digite seu bairro"),
     cidade: zod.string().nonempty("Digite sua cidade"),
     complemento: zod.string(),
-    uf: zod.string().nonempty("Digite seu estado").length(2, "Digite um valor válido")
+    uf: zod.string().nonempty("Digite seu estado").length(2, "Digite um valor válido"),
+    payment: zod.nativeEnum(PaymentMethods, {
+        errorMap:() => {
+            return {message: "Informe o método de pagamento"}
+        } 
+    })
 })
 
 type FormData = zod.infer<typeof formValiadation>
 
 export function Checkout() {
 
-    const {createPurchaseData, purchaseData} = useContext(PurchaseContext)
+    const {createPurchaseData} = useContext(PurchaseContext)
 
     const newForm = useForm<FormData>({
         resolver: zodResolver(formValiadation),
@@ -33,7 +44,7 @@ export function Checkout() {
             bairro: '',
             cidade: '',
             uf: '',
-            complemento: ''
+            complemento: '',
         },
     })
 
@@ -41,6 +52,7 @@ export function Checkout() {
 
     function handleNewPurchase(data: FormData){
         createPurchaseData(data)
+        console.log(data)
     }
 
     return (

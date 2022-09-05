@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
 import { PurchaseContext } from "../../../../contexts/PurchaseContext";
 import { Product } from "./Products";
 import { ButtonPurchase, PurchaseContainer, ValueDescription, ValuePurchase } from "./styled";
@@ -39,7 +38,7 @@ export function Purchase() {
                     </ValueDescription>
                 </ValuePurchase>
             )}
-            <ButtonPurchase type="submit">CONFIRMAR PEDIDO</ButtonPurchase>
+            <ButtonPurchase disabled={!listPurchase.length} type="submit"><a>CONFIRMAR PEDIDO</a></ButtonPurchase>
             
 
         </PurchaseContainer>
