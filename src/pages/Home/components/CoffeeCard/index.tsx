@@ -34,7 +34,7 @@ export function CoffeeCardContainer({ id, name, description, value, category, im
 
     function newPurchase(){
         handleNewPurchase(id, qtde)
-        setQtde(0)
+        setQtde(1)
     }
 
     return (

@@ -89,14 +89,16 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
             }
         })}
         } else {
-            addQtdeCoffee(coffeeAlreadyExistsInList.id)
+            addQtdeCoffee(coffeeAlreadyExistsInList.id, qtde)
         }
     }
 
-    function addQtdeCoffee(id:string){
+    function addQtdeCoffee(id:string, quantity?:number){
+        let quantityTotal = 1
+        if(quantity){quantityTotal = quantity}
         const updateQtde = listPurchase.map((purchase) => {
             if(purchase.id === id){
-                const qtde = purchase.qtde + 1
+                const qtde = purchase.qtde + quantityTotal
                 const value = purchase.coffee.value * qtde
                 return{ ...purchase, qtde, value }
             } return purchase
