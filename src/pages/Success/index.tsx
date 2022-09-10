@@ -12,7 +12,7 @@ export function Success() {
         <SuccessContainer>
             <ConfirmPurchase>
                 <ConfirmHeader>
-                    <h1>Uhu! Pedido Confirmado0</h1>
+                    <h1>Uhu! Pedido Confirmado</h1>
                     <p>Agora é só aguardar que logo o café chegará até você</p>
                 </ConfirmHeader>
                 <ConfirmBody>

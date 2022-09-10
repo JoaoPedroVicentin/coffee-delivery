@@ -28,9 +28,9 @@ export function Product({id, coffee, qtde, value}:PurchaseProps){
 
     return(
         <ProductContainer>
-            <img src={coffee.img}/>
+            <img src={coffee && coffee.img}/>
             <InfosProduct>
-                <p>{coffee.name}</p>
+                <p>{coffee && coffee.name}</p>
                 <div>
                     <CounterProduct>
                         <ButtonCountProduct type="button" onClick={handleDropQtde}><Minus size={14}/></ButtonCountProduct>
