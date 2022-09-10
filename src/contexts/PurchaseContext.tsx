@@ -103,6 +103,7 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
                 return{ ...purchase, qtde, value }
             } return purchase
         }) 
+        console.log(updateQtde)
         setListPurchase(updateQtde)
     }
 
@@ -117,6 +118,7 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
                 return{ ...purchase, qtde, value }
             } return purchase
         }) 
+        console.log(updateQtde)
         setListPurchase(updateQtde)
     }
 
@@ -145,7 +147,7 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
             description: 'O tradicional café feito com água quente e grãos moídos',
             value: 9.90,
             category: ['TRADICIONAL'],
-            img: 'src/assets/coffees/Expresso.svg',
+            img: 'src/assets/Expresso.svg',
         },
         {
             id: '2',
@@ -153,7 +155,7 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
             description: 'Expresso diluído, menos intenso que o tradicional',
             value: 9.90,
             category: ['TRADICIONAL'],
-            img: 'src/assets/coffees/Americano.svg',
+            img: 'src/assets/Americano.svg',
         },
         {
             id: '3',
@@ -161,7 +163,7 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
             description: 'Café expresso tradicional com espuma cremosa',
             value: 9.90,
             category: ['TRADICIONAL'],
-            img: 'src/assets/coffees/ExpressoCremoso.svg'
+            img: 'src/assets/ExpressoCremoso.svg'
         },
         {
             id: '4',
@@ -169,7 +171,7 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
             description: 'Bebida preparada com café expresso e cubos de gelo',
             value: 9.90,
             category: ['TRADICIONAL', 'GELADO'],
-            img: 'src/assets/coffees/CaféGelado.svg'
+            img: 'src/assets/CaféGelado.svg'
         },
         {
             id: '5',
@@ -177,7 +179,7 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
             description: 'Meio a meio de expresso tradicional com leite vaporizado',
             value: 9.90,
             category: ['TRADICIONAL', 'COM LEITE'],
-            img: 'src/assets/coffees/CaféComLeite.svg',
+            img: 'src/assets/CaféComLeite.svg',
         },
         {
             id: '6',
@@ -185,7 +187,7 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
             description: 'Uma dose de café expresso com o dobro de leite e expuma cremosa',
             value: 9.90,
             category: ['TRADICIONAL', 'COM LEITE'],
-            img: 'src/assets/coffees/Latte.svg',
+            img: 'src/assets/Latte.svg',
         },
         {
             id: '7',
@@ -193,7 +195,7 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
             description: 'Bebida com canela feita de doses igauis de café, leite e espuma',
             value: 9.90,
             category: ['TRADICIONAL', 'COM LEITE'],
-            img: 'src/assets/coffees/Capuccino.svg',
+            img: 'src/assets/Capuccino.svg',
         },
         {
             id: '8',
@@ -201,7 +203,7 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
             description: 'Café expresso misturado com um pouco de leite quente e espuma',
             value: 9.90,
             category: ['TRADICIONAL', 'COM LEITE'],
-            img: 'src/assets/coffees/Macchiato.svg',
+            img: 'src/assets/Macchiato.svg',
         },
         {
             id: '9',
@@ -209,7 +211,7 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
             description: 'Café expresso com calda de chocolate, pouco leite e espuma',
             value: 9.90,
             category: ['TRADICIONAL', 'COM LEITE'],
-            img: 'src/assets/coffees/Mocaccino.svg',
+            img: 'src/assets/Mocaccino.svg',
         },
         {
             id: '10',
@@ -217,7 +219,7 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
             description: 'Bebida feita com chocolate dissolvido no leite quente e café',
             value: 9.90,
             category: ['ESPECIAL', 'COM LEITE'],
-            img: 'src/assets/coffees/ChocolateQuente.svg',
+            img: 'src/assets/ChocolateQuente.svg',
         },
         {
             id: '11',
@@ -225,7 +227,7 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
             description: 'Drink gelado de café expresso com rum, creme de leite e hortelã',
             value: 9.90,
             category: ['ESPECIAL', 'ALCOÓLICO', 'GELADO'],
-            img: 'src/assets/coffees/Cubano.svg'
+            img: 'src/assets/Cubano.svg'
         },
         {
             id: '12',
@@ -233,7 +235,7 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
             description: 'Bebida adocicada preparada com café e leite de coco',
             value: 9.90,
             category: ['ESPECIAL'],
-            img: 'src/assets/coffees/Havaiano.svg',
+            img: 'src/assets/Havaiano.svg',
         },
         {
             id: '13',
@@ -241,7 +243,7 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
             description: 'Bebida preparada com grãos de café árabe e especiarias',
             value: 9.90,
             category: ['ESPECIAL'],
-            img: 'src/assets/coffees/Árabe.svg',
+            img: 'src/assets/Árabe.svg',
         },
         {
             id: '14',
@@ -249,7 +251,7 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
             description: 'Bebida a base de café, uísque irlandês, açúcar e chantily',
             value: 9.90,
             category: ['ESPECIAL', 'ALCOÓLICO'],
-            img: 'src/assets/coffees/Irlandês.svg',
+            img: 'src/assets/Irlandês.svg',
         }
     ]
 
