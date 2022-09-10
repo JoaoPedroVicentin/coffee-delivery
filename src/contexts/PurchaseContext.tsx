@@ -143,7 +143,7 @@ export function PurchaseContextProvider({children}: PurchaseContextProvidersProp
     const coffeeList = [
         {
             id: '1',
-            name: 'Expresso Tradicional',
+            name: 'Expresso Tradicionalll',
             description: 'O tradicional café feito com água quente e grãos moídos',
             value: 9.90,
             category: ['TRADICIONAL'],
