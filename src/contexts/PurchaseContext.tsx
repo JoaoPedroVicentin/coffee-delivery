@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useEffect, useMemo, useState } from "react"
+import { createContext, ReactNode, useMemo, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import {v4 as uuidv4} from 'uuid';
 import { coffeeList } from "../assets/data/coffees";
