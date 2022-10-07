@@ -14,9 +14,7 @@
 - Exibir o valor total da soma de itens no carrinho multiplicados pelo valor
 
 <h1 align="center">
-    <img alt="Readme" title="Readme" src="./src/assets/github/gitImg1.png"/>
-    <img alt="Readme" title="Readme" src="./src/assets/github/gitImg2.png"/>
-    <img alt="Readme" title="Readme" src="./src/assets/github/gitImg3.png"/>
+    <img alt="Readme" title="Readme" src="./src/assets/github/gitImg.jpg"/>
  </h1>
  
  ##
