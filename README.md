@@ -36,7 +36,7 @@
 ```bash
 
 #Clone este repositório
-$ git clone https://github.com/JoaoPedroVicentin/Coffee_Delivery.git
+$ git clone https://github.com/JoaoPedroVicentin/coffee-delivery.git
 
 #Acesse a pasta do projeto
 $ cd Coffee-Delivery
