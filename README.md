@@ -31,6 +31,8 @@
 </div>
 <br>
 
+<a href="https://coffee-delivery-seven-plum.vercel.app/">Deploy na VERCEL</a>
+
 ##
 
 ```bash
