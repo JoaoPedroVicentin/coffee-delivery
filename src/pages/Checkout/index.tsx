@@ -15,9 +15,9 @@ enum PaymentMethods {
 }
 
 const formValiadation = zod.object({
-    cep: zod.string().nonempty("Digite seu cep").min(8, "Mínimo de 8 carácteres"),
+    cep: zod.string().nonempty("Digite seu cep").min(8, "Mínimo de 8 carácteres").regex(/^([0-9]+)$/i, { message: 'Deve conter apenas números' }),
     rua: zod.string().nonempty("Digite sua rua"),
-    numero: zod.string().nonempty("Digite seu número"),
+    numero: zod.string().nonempty("Digite seu número").regex(/^([0-9]+)$/i, { message: 'Deve conter apenas números' }),
     bairro: zod.string().nonempty("Digite seu bairro"),
     cidade: zod.string().nonempty("Digite sua cidade"),
     complemento: zod.string(),
